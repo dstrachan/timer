@@ -29,7 +29,7 @@
 // Calls the specified timer function
 // @param tag symbol Tag to uniquely identify timer
 .timer.priv.call:{[tag]
-  $[1=count last timer;@;.]. timer:first@'.timer.priv.timers[tag;`func`args]
+  $[1=count last timer;@;.]. timer:first@'.timer.priv.timers[tag;`func`args];
   }
 
 ////////////
@@ -81,5 +81,5 @@
 // INIT //
 //////////
 
-.dotz.append[`.z.ts;.timer.priv.ts]
-if[not system"t";system"t 1000"]
+.dotz.append[`.z.ts;`.timer.priv.ts]
+if[not system"t";system"t 100"]
